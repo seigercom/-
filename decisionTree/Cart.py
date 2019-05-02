@@ -1,16 +1,16 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_boston,load_wine
-import logging,time
+import time
 from sklearn.metrics import accuracy_score,mean_squared_error
 
 def logger(func):
     def wrapper(*args, **kwargs):
-        logging.debug("%s is running\n" % func.__name__)
+        print("%s is running\n" % func.__name__)
         time1 = time.time()
         ret =  func(*args, **kwargs)
         time2 = time.time()
-        logging.debug('using %.3f seconds\n' %(time2-time1))
+        print('using %.3f seconds\n' %(time2-time1))
         return ret
     return wrapper
 
